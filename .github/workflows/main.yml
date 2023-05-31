@@ -24,7 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: buildedApp
-          path: dist
+          path: ./dist
           if-no-files-found: error
         
   docker:
@@ -36,7 +36,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: buildedApp
-          path: dist
+          path: ./dist
 
       - name: Display structure of downloaded files
         run: ls -R
