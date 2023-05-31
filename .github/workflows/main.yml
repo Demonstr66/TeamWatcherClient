@@ -40,7 +40,7 @@ jobs:
 
       - name: Display structure of downloaded files
         run: ls -R
-        working-directory: path/to/artifact
+        working-directory: dist
       -
         name: Checkout
         uses: actions/checkout@v3
