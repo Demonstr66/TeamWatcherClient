@@ -32,7 +32,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.DOCKER_USERNAME }}/my-app:${{ github.sha }}
-          secrets:
-          docker_username: ${{ env.DOCKER_USERNAME }}
-          docker_password: ${{ env.DOCKER_PASSWORD }}
+          tags: ${{ env.DOCKER_USERNAME }}/teamwatcher:${{ github.sha }}
+          username: ${{ env.DOCKER_USERNAME }}
+          password: ${{ env.DOCKER_PASSWORD }}
