@@ -37,10 +37,6 @@ jobs:
         with:
           name: buildedApp
           path: ./dist
-
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: dist
       -
         name: Checkout
         uses: actions/checkout@v3
