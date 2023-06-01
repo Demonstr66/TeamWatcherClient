@@ -1,7 +1,8 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <h2>HELLO FROM  ~CI/CD</h2>
+    <h2>NEW COMMIT</h2>
+    <input v-model="req" type="text" />
     <button @click="getData">try load</button>
     <div style="border-radius: 8px; border: 1px solid grey;">
       {{response}}
@@ -16,12 +17,13 @@ export default {
   name: "about",
   data() {
     return {
+      req: "",
       response: ""
     }
   },
   methods: {
     async getData() {
-      axios.get('/api/123')
+      axios.get(req)
           .then((response) => {
             console.log(response)
             this.response = response.data

@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+
+  # -------------- Server ---------------
+
+  backend:
+    image: demonstr66/teamwatcher-server
+    container_name: server-prod
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - teamwatcher_network
+
+  frontend:
+    image: demonstr66/teamwatcher-client
+    container_name: client-prod
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - teamwatcher_network
+
+
+# --------------- Networks ---------------
+networks:
+  teamwatcher_network:
+    driver: bridge
