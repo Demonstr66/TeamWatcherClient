@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     async getData() {
-      axios.get(req)
+      axios.get(this.req)
           .then((response) => {
             console.log(response)
             this.response = response.data
