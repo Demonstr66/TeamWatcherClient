@@ -1,6 +1,17 @@
 version: '3.8'
 services:
 
+  #----CLIENT-------
+  frontend:
+    image: demonstr66/teamwatcher-client
+    container_name: client-prod
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - teamwatcher_network
+
+
   # -------------- Server ---------------
 
   backend:
@@ -11,19 +22,6 @@ services:
       - "3000:3000"
     networks:
       - teamwatcher_network
-
-  frontend:
-    image: demonstr66/teamwatcher-client
-    container_name: client-prod
-    restart: always
-    ports:
-      - "80:80"
-    depends_on:
-      backend:
-        condition: service_started
-    networks:
-      - teamwatcher_network
-
 
 # --------------- Networks ---------------
 networks:

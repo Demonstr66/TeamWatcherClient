@@ -1,7 +1,7 @@
 module.exports = {
     devServer: {
         proxy: {
-            '/api': {
+            '^/api': {
                 target: 'http://backend:3000/',
                 ws: true,
                 changeOrigin: true
