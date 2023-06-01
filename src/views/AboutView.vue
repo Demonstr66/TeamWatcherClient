@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <h2>NE HELLO FORM CI CD!!!!</h2>
     <h2>NEW COMMIT</h2>
     <input v-model="req" type="text" />
     <button @click="getData">try load</button>
